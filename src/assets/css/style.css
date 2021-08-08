@@ -37,6 +37,7 @@ button {
   -webkit-animation: cursorAnim 0.5s infinite alternate;
           animation: cursorAnim 0.5s infinite alternate;
   pointer-events: none;
+  z-index: 1000;
 }
 
 .cursor::after {
@@ -148,13 +149,24 @@ p a {
 }
 
 .content {
-  width: 80%;
+  width: 85%;
   margin: 0 auto;
   padding: 0px 25px;
 }
 
+.heading {
+  font-size: 32px;
+  font-weight: 700;
+}
+
 .navbar {
   padding: 25px 0px;
+  width: 100%;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 999;
 }
 
 .navbar .content {
@@ -307,5 +319,168 @@ p a {
   color: #ffffff;
   border-radius: 40px;
   text-transform: uppercase;
+}
+
+.tech {
+  padding-top: 25px;
+  padding-bottom: 100px;
+}
+
+.tech .content {
+  max-width: 990px;
+}
+
+.tech .heading {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 40px;
+}
+
+.tech .tech-list {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0px -20px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.tech .tech-list li {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 30px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 20%;
+          flex: 0 0 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.tech .tech-list li.bubble-io img {
+  height: 30px;
+}
+
+.tech .tech-list li.figma img {
+  height: 60px;
+}
+
+.tech .tech-list li.vuejs img {
+  height: 60px;
+}
+
+.tech .tech-list li.nodejs img {
+  height: 60px;
+}
+
+.tech .tech-list li.glide img {
+  height: 45px;
+}
+
+.tech .tech-list li img {
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.tech .tech-list li img:hover {
+  -webkit-filter: grayscale(0);
+          filter: grayscale(0);
+}
+
+.projects {
+  padding-bottom: 50px;
+}
+
+.projects .heading {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-bottom: 40px;
+}
+
+.projects .project-list {
+  margin: 0px -20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.projects .project-list .item {
+  margin-top: 60px;
+  padding: 0 20px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 50%;
+          flex: 0 0 50%;
+}
+
+.projects .project-list .item:first-child {
+  margin-top: 0px;
+}
+
+.projects .project-list .item .image-container {
+  position: relative;
+  width: 100%;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  height: 600px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.projects .project-list .item .image-container img {
+  position: relative;
+  height: 68%;
+}
+
+.projects .project-list .item .image-container.ridgeway {
+  background-color: rgba(178, 172, 159, 0.5);
+}
+
+.projects .project-list .item .image-container.erazerowaste {
+  background-color: #e8caec;
+}
+
+.projects .project-list .item h3 {
+  font-family: "Nunito", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: left;
+  color: var(--black-clr-300);
+}
+
+.projects .project-list .item p {
+  font-family: "Nunito", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: left;
+  color: var(--black-clr-100);
+  margin-top: 10px;
 }
 /*# sourceMappingURL=style.css.map */

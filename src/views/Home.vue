@@ -3,18 +3,24 @@
     <div class="cursor"></div>
     <Header />
     <Hero />
+    <Technologies />
+    <Projects />
   </div>
 </template>
 
 <script>
 import Header from "@/components/Header.vue";
 import Hero from "@/components/Hero.vue";
+import Technologies from "@/components/Technologies.vue";
+import Projects from "@/components/Projects.vue";
 
 export default {
   name: "Home",
   components: {
     Header,
     Hero,
+    Technologies,
+    Projects,
   },
   mounted() {
     const cursor = document.querySelector(".cursor");
@@ -36,3 +42,4 @@ export default {
   },
 };
 </script>
+
