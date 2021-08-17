@@ -53,9 +53,13 @@ export default {
       $(".image-container").css("height", width + 30);
     }
 
+    getWidth();
+
     $(window).resize(function () {
       getWidth();
     });
+
+    // window.addEventListener('resize', reportWindowSize);
   },
 };
 </script>
