@@ -39,6 +39,8 @@
 
 <script>
 import $ from "jquery";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export default {
   name: "Projects",
@@ -59,7 +61,29 @@ export default {
       getWidth();
     });
 
-    // window.addEventListener('resize', reportWindowSize);
+    gsap.registerPlugin(ScrollTrigger);
+
+    let tl = gsap.timeline({
+      // yes, we can add it to an entire timeline!
+      scrollTrigger: {
+        trigger: ".project-list .item",
+        start: "top bottom-=100px", // when the top of the trigger hits the top of the viewport
+        end: "+=500", // end after scrolling 500px beyond the start
+      },
+    });
+
+    tl.from(".project-list .item:nth-child(1)", {
+      x: -200,
+      duration: 1,
+      autoAlpha: 0,
+    }).from(
+      ".project-list .item:nth-child(2)",
+      {
+        scale: 0.3,
+        autoAlpha: 0,
+      },
+      "-=.5"
+    );
   },
 };
 </script>

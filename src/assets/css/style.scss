@@ -9,11 +9,38 @@
 body {
   font-family: "Nunito", sans-serif;
 
+  --blue: #004e91;
+
+  --white-clr-100: #ffffff;
+
   --black-clr-100: #676767;
   --black-clr-200: #4a4a4a;
   --black-clr-300: #0d0e10;
 
   overflow-x: hidden;
+}
+
+.dark {
+  --white-clr-100: #0c0e10;
+
+  --black-clr-100: #dfdfdf;
+  --black-clr-200: #eeeeee;
+  --black-clr-300: #ffffff;
+
+  background-color: #0c0e10;
+
+  .theme-toggle {
+    background-color: #0c0e10;
+    box-shadow: 0 0 10px rgba(225, 225, 225, 0.2);
+
+    .toggle-track {
+      background-color: #111;
+    }
+
+    .toggle-thumb {
+      background-color: #0c0e10;
+    }
+  }
 }
 
 a {
@@ -116,6 +143,7 @@ p {
 .heading {
   font-size: 32px;
   font-weight: 700;
+  color: var(--black-clr-300);
 }
 
 @media (max-width: 540px) {
@@ -250,7 +278,7 @@ p {
       background-color: var(--black-clr-300);
       font-family: "Nunito", sans-serif;
       font-weight: 600;
-      color: #ffffff;
+      color: var(--white-clr-100);
       border-radius: 40px;
       text-transform: uppercase;
     }
@@ -433,6 +461,26 @@ p {
         color: var(--black-clr-100);
         margin-top: 10px;
       }
+
+      a {
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
+        color: var(--blue);
+        transition: all 0.2s ease-in-out;
+        font-size: 15px;
+        width: fit-content;
+
+        &:hover {
+          padding-left: 10px;
+        }
+
+        svg {
+          width: 20px;
+          height: 20px;
+          stroke: var(--blue);
+        }
+      }
     }
   }
 }
@@ -453,6 +501,62 @@ p {
       .item {
         flex: 0 0 100%;
       }
+    }
+  }
+}
+
+.theme-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 40px;
+  background-color: #ffffff;
+  border-radius: 25px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+
+  &.active {
+    .toggle-thumb {
+      left: 28px;
+
+      &::after {
+        background-image: url(../img/crescent-moon.svg);
+      }
+    }
+  }
+
+  .toggle-track {
+    width: 50px;
+    height: 30px;
+    border-radius: 25px;
+    background-color: #ebebeb;
+  }
+
+  .toggle-thumb {
+    width: 26px;
+    height: 26px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    left: 8px;
+    z-index: 2;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+
+    &::after {
+      content: "";
+      background-image: url(../img/sunny.svg);
+      width: 80%;
+      height: 80%;
+      position: absolute;
+      z-index: -1;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
   }
 }

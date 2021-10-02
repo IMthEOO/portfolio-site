@@ -5,10 +5,16 @@
     <Hero />
     <Technologies />
     <Projects />
+
+    <div class="theme-toggle">
+      <div class="toggle-track"></div>
+      <div class="toggle-thumb"></div>
+    </div>
   </div>
 </template>
 
 <script>
+import $ from "jquery";
 import Header from "@/components/Header.vue";
 import Hero from "@/components/Hero.vue";
 import Technologies from "@/components/Technologies.vue";
@@ -38,6 +44,11 @@ export default {
       setTimeout(() => {
         cursor.classList.remove("expand");
       }, 500);
+    });
+
+    $(".toggle-thumb").click(() => {
+      $("body").toggleClass("dark");
+      $(".theme-toggle").toggleClass("active");
     });
   },
 };
